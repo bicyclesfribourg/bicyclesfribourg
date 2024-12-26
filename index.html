@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+        }
+        .card img {
+            width: 100%;
+            max-height: 170px;
+        }
+        .card-description {
+            padding: 15px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 562.5px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        .modal-content img{
+            max-width: 562px;
+            height: auto;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .nav-button.left {
+            left: 10px;
+        }
+        .nav-button.right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card" onclick="openModal(1)">
+            <img src="img/bike1/img_1.png" alt="Image 1">
+            <div class="card-description">
+                <p>Card 1 Description</p>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card" onclick="openModal(2)">
+            <img src="img/bike2/img_1.png" alt="Image 2">
+            <div class="card-description">
+                <p>Card 2 Description</p>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card" onclick="openModal(3)">
+            <img src="img/bike3/img_1.png" alt="Image 3">
+            <div class="card-description">
+                <p>Card 3 Description</p>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card" onclick="openModal(4)">
+            <img src="img/bike4/img_1.png" alt="Image 4">
+            <div class="card-description">
+                <p>Card 4 Description</p>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="card" onclick="openModal(5)">
+            <img src="img/bike5/img_1.png" alt="Image 5">
+            <div class="card-description">
+                <p>Card 5 Description</p>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="card" onclick="openModal(6)">
+            <img src="img/bike6/img_1.png" alt="Image 6">
+            <div class="card-description">
+                <p>Card 6 Description</p>
+            </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="card" onclick="openModal(7)">
+            <img src="img/bike7/img_1.png" alt="Image 7">
+            <div class="card-description">
+                <p>Card 7 Description</p>
+            </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="card" onclick="openModal(8)">
+            <img src="img/bike8/img_1.png" alt="Image 8">
+            <div class="card-description">
+                <p>Card 8 Description</p>
+            </div>
+        </div>
+        <!-- Card 9 -->
+        <div class="card" onclick="openModal(9)">
+            <img src="img/bike9/img_1.png" alt="Image 9">
+            <div class="card-description">
+                <p>Card 9 Description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <button class="nav-button left" onclick="changeImage(-1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeImage(1)">&#10095;</button>
+            <h2 id="modal-title">Title</h2>
+            <img id="modal-image" src="" alt="Modal Image" style="width: 100%; height: auto;">
+            <p id="modal-description">Description</p>
+            <p id="modal-price">Price: $0.00</p>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalImage = document.getElementById("modal-image");
+        const modalDescription = document.getElementById("modal-description");
+        const modalPrice = document.getElementById("modal-price");
+        let currentCard = 1;
+        let currentImageIndex = 1;
+
+        function openModal(cardNumber) {
+            currentCard = cardNumber;
+            currentImageIndex = 1;
+            updateModalContent();
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 1) {
+                currentImageIndex = 7;
+            } else if (currentImageIndex > 7) {
+                currentImageIndex = 1;
+            }
+            updateModalContent();
+        }
+
+        function updateModalContent() {
+            modalTitle.textContent = `Card ${currentCard} Title`;
+            modalImage.src = `./img/bike${currentCard}/img_${currentImageIndex}.png`;
+            modalDescription.textContent = `This is a detailed description for card ${currentCard}.`;
+            modalPrice.textContent = `Price: $${currentCard * 10}.00`;
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
