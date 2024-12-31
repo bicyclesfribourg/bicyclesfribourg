@@ -30,6 +30,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
+            background-color: rgb(255, 244, 228);
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
@@ -42,6 +43,9 @@
         .card {
             background-color: #fff;
             border-radius: 8px;
+            border-style: solid;
+            border-width: 0.5px;
+            border-color: #000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
@@ -147,63 +151,73 @@
         <div class="card" onclick="openModal(1)">
             <img src="img/bike1/img_1.png" alt="Image 1">
             <div class="card-description">
-                <p>Card 1 Description</p>
+                <p>Good bike for trips. Flat front wheel. Has 3 gears and 7 gears on the rear wheel. 
+                                                Beautiful car. Flat front wheel. Sold with a bag</p>
             </div>
         </div>
         <!-- Card 2 -->
         <div class="card" onclick="openModal(2)">
             <img src="img/bike2/img_1.png" alt="Image 2">
             <div class="card-description">
-                <p>Card 2 Description</p>
+                <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Good wheels, no troubles</p>
             </div>
         </div>
         <!-- Card 3 -->
         <div class="card" onclick="openModal(3)">
             <img src="img/bike3/img_1.png" alt="Image 3">
             <div class="card-description">
-                <p>Card 3 Description</p>
+                <p>Electric bike. 4 gears in front, 7 in the back.  Battery: 10Ah, 36V. Wonderful 
+                                            condition, suitable for city and mountain riding</p>
             </div>
         </div>
         <!-- Card 4 -->
         <div class="card" onclick="openModal(4)">
             <img src="img/bike4/img_1.png" alt="Image 4">
             <div class="card-description">
-                <p>Card 4 Description</p>
+                <p>Don't know what to buy for your boyfriend/husband/friend/son? Shh, just a secret. 
+                    Let's tell you that there is an excellent choice for a bicycle lover and for an 
+                    ordinary person. The best choice for any type of riding. 3:10 gears, the 
+                    hydraulic brake system is more reliable, and the shock smoothing system delivers 
+                    pure pleasure while driving</p>
             </div>
         </div>
         <!-- Card 5 -->
         <div class="card" onclick="openModal(5)">
             <img src="img/bike5/img_1.png" alt="Image 5">
             <div class="card-description">
-                <p>Card 5 Description</p>
+                <p>The bike is in excellent condition. Suitable for teenagers and adults. good wheels, 
+                    and a number of gears that can quickly reach a speed of 40 km/h.</p>
             </div>
         </div>
         <!-- Card 6 -->
         <div class="card" onclick="openModal(6)">
             <img src="img/bike6/img_1.png" alt="Image 6">
             <div class="card-description">
-                <p>Card 6 Description</p>
+                <p>Bicycle for city riding. 3*7 gears. Good condition. Bottle mount</p>
             </div>
         </div>
         <!-- Card 7 -->
         <div class="card" onclick="openModal(7)">
             <img src="img/bike7/img_1.png" alt="Image 7">
             <div class="card-description">
-                <p>Card 7 Description</p>
+                <p>Electric bike. Electric motor not working. Bell. Rear brake does not work</p>
             </div>
         </div>
         <!-- Card 8 -->
         <div class="card" onclick="openModal(8)">
             <img src="img/bike8/img_1.png" alt="Image 8">
             <div class="card-description">
-                <p>Card 8 Description</p>
+                <p>A bicycle for traveling around the city and mountains. A wonderful choice if you 
+                    want to ride with the breeze. There is a discount now, hurry up and grab it! 3:7 
+                    gears, and wonderful condition!</p>
             </div>
         </div>
         <!-- Card 9 -->
         <div class="card" onclick="openModal(9)">
             <img src="img/bike9/img_1.png" alt="Image 9">
             <div class="card-description">
-                <p>Card 9 Description</p>
+                <p>Don't know what to do in your free time? Ride your bike! and we will help you with your choice... 
+                    A wonderful bicycle with 9 gears, reaches speeds of up to 30 km/h on a flat road Buy it!</p>
             </div>
         </div>
     </div>
@@ -231,6 +245,8 @@
     </div>
 
     <script>
+        const PriceList = ["0.00", "750.00", "1000.00", "1500.00", "350.00", "80.00", 
+        "200.00", "140.00", "80.00", "60.00"]
         const modal = document.getElementById("modal");
         const modalTitle = document.getElementById("modal-title");
         const modalImage = document.getElementById("modal-image");
@@ -264,7 +280,7 @@
             modalTitle.textContent = `Card ${currentCard} Title`;
             modalImage.src = `./img/bike${currentCard}/img_${currentImageIndex}.png`;
             modalDescription.textContent = `This is a detailed description for card ${currentCard}.`;
-            modalPrice.textContent = `Price: $${currentCard * 10}.00`;
+            modalPrice.textContent = `Price: CHF ${PriceList[currentCard]}.00`;
         }
         window.onclick = function(event) {
             if (event.target == modal) {
