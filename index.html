@@ -25,7 +25,14 @@
             padding: 10px 0;
             z-index: 1000;
         }
-        .head h1, h5 {
+        .head img {
+            position: absolute;
+            top: 0px;
+            left: 100px;
+            width: 100px;
+            height: auto;
+        }
+        .head h1, .head h5 {
             margin: 10px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -139,9 +146,11 @@
             }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes"></script>
 </head>
 <body>
     <div class="head">
+        <img src="img/aaa/logo700_700.png" alt="Logo"> 
         <h1>Fribourg bicycles</h1>
         <h5>Excellent solutions for Your bikes and pastime</h5>
     </div>
