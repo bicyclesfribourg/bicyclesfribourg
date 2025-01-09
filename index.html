@@ -143,7 +143,7 @@
 <body>
     <div class="head">
         <h1>Fribourg bicycles</h1>
-        <h5>Good solutions for Your bikes and pastime</h5>
+        <h5>Excellent solutions for Your bikes and pastime</h5>
     </div>
 
     <div class="container">
@@ -151,7 +151,7 @@
         <div class="card" onclick="openModal(1)">
             <img src="img/bike1/img_1.png" alt="Image 1">
             <div class="card-description">
-                <p>Good bike for trips. Flat front wheel. Has 3 gears and 7 gears on the rear wheel. 
+                <p>Excellent bike for trips. Flat front wheel. Has 3 gears and 7 gears on the rear wheel. 
                                                 Beautiful car. Flat front wheel. Sold with a bag</p>
             </div>
         </div>
@@ -159,7 +159,7 @@
         <div class="card" onclick="openModal(2)">
             <img src="img/bike2/img_1.png" alt="Image 2">
             <div class="card-description">
-                <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Good wheels, no troubles</p>
+                <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Excellent wheels, no troubles</p>
             </div>
         </div>
         <!-- Card 3 -->
@@ -185,7 +185,7 @@
         <div class="card" onclick="openModal(5)">
             <img src="img/bike5/img_1.png" alt="Image 5">
             <div class="card-description">
-                <p>The bike is in excellent condition. Suitable for teenagers and adults. good wheels, 
+                <p>The bike is in excellent condition. Suitable for teenagers and adults. Excellent wheels, 
                     and a number of gears that can quickly reach a speed of 40 km/h.</p>
             </div>
         </div>
@@ -193,7 +193,7 @@
         <div class="card" onclick="openModal(6)">
             <img src="img/bike6/img_1.png" alt="Image 6">
             <div class="card-description">
-                <p>Bicycle for city riding. 3*7 gears. Good condition. Bottle mount</p>
+                <p>Bicycle for city riding. 3*7 gears. Excellent condition. Bottle mount</p>
             </div>
         </div>
         <!-- Card 7 -->
@@ -234,6 +234,16 @@
             <p id="modal-price">Price: $0.00</p>
         </div>
     </div>
+    <div class="map-container" style="width: 100%; height: 400px; margin-top: 20px;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.104065896178!2d7.150856315556453!3d46.80647797913886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e6d1f4b0f7b2b%3A0x6d7f8f8f8f8f8f8f!2sFribourg%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1618311234567!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+        ></iframe>
+    </div>
     <div class="footer">
         <a href="https://wa.me/41765377924" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png" alt="WhatsApp" style="width: 24px; height: 24px;">
@@ -247,6 +257,16 @@
     <script>
         const PriceList = ["0.00", "750.00", "1000.00", "1500.00", "350.00", "80.00", 
         "200.00", "140.00", "80.00", "60.00"]
+        const NumberPhotos = [0, 4, 5, 1, 7, 4, 2, 4, 5, 5]
+        const DeteiledDescriptions = ["", "Excellent for every type of riding. 3 gears in front and 7 in rear wheel. Selling with the bag",
+        "Electric bike. 7 rear gears, cruise assistance. Battery: 30V*10Ah. Without front light. Excellent condition",
+        "Electric bike. 4 gears in front, 7 in back wheel. Battery 36V*10Ah. Wonderful condition",
+        "FOX bicycle. Great and legendary bike with 3*10 gears. Hydraulic brakes, Shock absorber on the front wheel",
+        "Excellent bike for city riding. Brilliant condition, 3 front, 9 rear gears",
+        "Excellent bike for city and off-road. 3*7 gears, excellent condition",
+        "Electro, motor doesn't work. Battery 25V*10Ah",
+        "Wonderful condition, 3 front, 7 rear gears, excellent for city trips",
+        "Excellent conditioned bike, but without grips((( 1:9 gears"]
         const modal = document.getElementById("modal");
         const modalTitle = document.getElementById("modal-title");
         const modalImage = document.getElementById("modal-image");
@@ -269,8 +289,8 @@
         function changeImage(direction) {
             currentImageIndex += direction;
             if (currentImageIndex < 1) {
-                currentImageIndex = 7;
-            } else if (currentImageIndex > 7) {
+                currentImageIndex = NumberPhotos[currentCard];
+            } else if (currentImageIndex > NumberPhotos[currentCard]) {
                 currentImageIndex = 1;
             }
             updateModalContent();
@@ -279,7 +299,7 @@
         function updateModalContent() {
             modalTitle.textContent = `Card ${currentCard} Title`;
             modalImage.src = `./img/bike${currentCard}/img_${currentImageIndex}.png`;
-            modalDescription.textContent = `This is a detailed description for card ${currentCard}.`;
+            modalDescription.textContent = DeteiledDescriptions[currentCard];
             modalPrice.textContent = `Price: CHF ${PriceList[currentCard]}.00`;
         }
         window.onclick = function(event) {
