@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Layout</title>
+    <link rel="preload" href="img/bike1/img_1.png" as="image">
+    <link rel="preload" href="img/bike1/img_2.png" as="image">
+    <link rel="preload" href="img/bike1/img_3.png" as="image">
+    <link rel="preload" href="img/bike1/img_4.png" as="image">
+    <link rel="preload" href="img/bike2/img_1.png" as="image">
+    <link rel="preload" href="img/bike2/img_2.png" as="image">
+    <link rel="preload" href="img/bike2/img_3.png" as="image">
+    <link rel="preload" href="img/bike2/img_4.png" as="image">
+    <link rel="preload" href="img/bike2/img_5.png" as="image">
+    <link rel="preload" href="img/bike3/img_1.png" as="image">
+    <link rel="preload" href="img/bike4/img_1.png" as="image">
+    <link rel="preload" href="img/bike4/img_2.png" as="image">
+    <link rel="preload" href="img/bike4/img_3.png" as="image">
+    <link rel="preload" href="img/bike4/img_4.png" as="image">
+    <link rel="preload" href="img/bike4/img_5.png" as="image">
+    <link rel="preload" href="img/bike4/img_6.png" as="image">
+    <link rel="preload" href="img/bike4/img_7.png" as="image">
+    <link rel="preload" href="img/bike5/img_1.png" as="image">
+    <link rel="preload" href="img/bike5/img_2.png" as="image">
+    <link rel="preload" href="img/bike5/img_3.png" as="image">
+    <link rel="preload" href="img/bike5/img_4.png" as="image">
+    <link rel="preload" href="img/bike6/img_1.png" as="image">
+    <link rel="preload" href="img/bike6/img_2.png" as="image">
+    <link rel="preload" href="img/bike7/img_1.png" as="image">
+    <link rel="preload" href="img/bike7/img_2.png" as="image">
+    <link rel="preload" href="img/bike7/img_3.png" as="image">
+    <link rel="preload" href="img/bike7/img_4.png" as="image">
+    <link rel="preload" href="img/bike8/img_1.png" as="image">
+    <link rel="preload" href="img/bike8/img_2.png" as="image">
+    <link rel="preload" href="img/bike8/img_3.png" as="image">
+    <link rel="preload" href="img/bike8/img_4.png" as="image">
+    <link rel="preload" href="img/bike8/img_5.png" as="image">
+    <link rel="preload" href="img/bike9/img_1.png" as="image">
+    <link rel="preload" href="img/bike9/img_2.png" as="image">
+    <link rel="preload" href="img/bike9/img_3.png" as="image">
+    <link rel="preload" href="img/bike9/img_4.png" as="image">
+    <link rel="preload" href="img/bike9/img_5.png" as="image">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +51,46 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f4f4f9;
-        }
+        }/* /* 
+        #preloadedImages {
+            background-image: url(img/bike1/img_1.png);
+            background-image: url(img/bike1/img_2.png);
+            background-image: url(img/bike1/img_3.png);
+            background-image: url(img/bike1/img_4.png);
+            background-image: url(img/bike2/img_1.png);
+            background-image: url(img/bike2/img_2.png);
+            background-image: url(img/bike2/img_3.png);
+            background-image: url(img/bike2/img_4.png);
+            background-image: url(img/bike2/img_5.png);
+            background-image: url(img/bike3/img_1.png);
+            background-image: url(img/bike4/img_1.png);
+            background-image: url(img/bike4/img_2.png);
+            background-image: url(img/bike4/img_3.png);
+            background-image: url(img/bike4/img_4.png);
+            background-image: url(img/bike4/img_5.png);
+            background-image: url(img/bike4/img_6.png);
+            background-image: url(img/bike4/img_7.png);
+            background-image: url(img/bike5/img_1.png);
+            background-image: url(img/bike5/img_2.png);
+            background-image: url(img/bike5/img_3.png);
+            background-image: url(img/bike5/img_4.png);
+            background-image: url(img/bike6/img_1.png);
+            background-image: url(img/bike6/img_2.png);
+            background-image: url(img/bike7/img_1.png);
+            background-image: url(img/bike7/img_2.png);
+            background-image: url(img/bike7/img_3.png);
+            background-image: url(img/bike7/img_4.png);
+            background-image: url(img/bike8/img_1.png);
+            background-image: url(img/bike8/img_2.png);
+            background-image: url(img/bike8/img_3.png);
+            background-image: url(img/bike8/img_4.png);
+            background-image: url(img/bike8/img_5.png);
+            background-image: url(img/bike9/img_1.png);
+            background-image: url(img/bike9/img_2.png);
+            background-image: url(img/bike9/img_3.png);
+            background-image: url(img/bike9/img_4.png);
+            background-image: url(img/bike9/img_5.png);
+    } */
         .head {
             position: fixed;
             top: 0;
@@ -44,8 +120,8 @@
             padding: 20px;
             max-width: 1200px;
             width: 100%;
-            margin-top: 80px; /* Adjust this value based on the height of the header */
-            margin-bottom: 60px; /* Adjust this value based on the height of the footer */
+            margin-top: 80px; 
+            margin-bottom: 60px;
         }
         .card {
             background-color: #fff;
@@ -139,7 +215,7 @@
             font-size: 24px;
         }
 
-        /* Responsive styles for mobile devices */
+        
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Single column layout */
