@@ -198,7 +198,7 @@
                 grid-template-columns: 1fr; /* Single column layout */
             }
         }
-        @media (max-width: 412){
+        @media (max-width: 500px){
             .container {
                 grid-template-columns: 1fr; /* Single column layout */
             }
@@ -355,7 +355,7 @@
         function changeLogo(){
             const logo_img = document.getElementById("logo");
             const frb = document.getElementById("frb")
-            if (window.innerWidth <= 412){
+            if (window.innerWidth <= 500){
                 frb.textContent = "Fribourg bicycles";
                 logo_img.src = "img/aaa/logo600_340.png";
                 logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
@@ -364,8 +364,7 @@
                 frb.textContent = "Fribourg       bicycles";
             logo_img.src = "img/aaa/logo700_700.png"; 
             logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
-            }    
-            frb.textContent = window.innerWidth+"px";
+            }
         }
 
         window.onclick = function(event) {
