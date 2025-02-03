@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fr. Bicycles</title>
+    <title>Card Layout</title>
     <link rel="preload" href="img/bike1/img_1.png" as="image">
     <link rel="preload" href="img/bike1/img_2.png" as="image">
     <link rel="preload" href="img/bike1/img_3.png" as="image">
@@ -42,6 +42,11 @@
     <link rel="preload" href="img/bike9/img_4.png" as="image">
     <link rel="preload" href="img/bike9/img_5.png" as="image">
     <style>
+        html{
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }   
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -51,6 +56,9 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f4f4f9;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
         .head {
             position: fixed;
@@ -68,9 +76,14 @@
             left: 100px;
             width: 100px;
             height: auto;
+            display: block;
         }
         .head h1, .head h5 {
-            margin: 10px;
+            white-space: pre;
+            position: relative;
+            z-index: 10;
+            margin-top: 15px;
+            margin-bottom: -3px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
@@ -142,6 +155,9 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .logo{
+            z-index: 1;
+        }
         .nav-button {
             position: absolute;
             top: 50%;
@@ -182,18 +198,22 @@
                 grid-template-columns: 1fr; /* Single column layout */
             }
         }
+        @media (max-width: 412){
+            .container {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/lazysizes"></script>
 </head>
 <body>
     <div class="head">
-        <img src="img/aaa/logo700_700.png" alt="Logo"> 
-        <h1>Fribourg bicycles</h1>
+        <img src="img/aaa/logo700_700.png" id="logo" class="logo" alt="Logo"> 
+        <h1 id="frb">Fribourg bicycles</h1>
         <h5>Excellent solutions for Your bikes and pastime</h5>
     </div>
 
     <div class="container">
-        <!-- Card 1 -->
         <div class="card" onclick="openModal(1)">
             <img src="img/bike1/img_1.png" alt="Image 1">
             <div class="card-description">
@@ -201,14 +221,12 @@
                                                 Beautiful car. Flat front wheel. Sold with a bag</p>
             </div>
         </div>
-        <!-- Card 2 -->
         <div class="card" onclick="openModal(2)">
             <img src="img/bike2/img_1.png" alt="Image 2">
             <div class="card-description">
                 <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Excellent wheels, no troubles</p>
             </div>
         </div>
-        <!-- Card 3 -->
         <div class="card" onclick="openModal(3)">
             <img src="img/bike3/img_1.png" alt="Image 3">
             <div class="card-description">
@@ -216,7 +234,6 @@
                                             condition, suitable for city and mountain riding</p>
             </div>
         </div>
-        <!-- Card 4 -->
         <div class="card" onclick="openModal(4)">
             <img src="img/bike4/img_1.png" alt="Image 4">
             <div class="card-description">
@@ -227,29 +244,25 @@
                     pure pleasure while driving</p>
             </div>
         </div>
-        <!-- Card 5 -->
-        <div class="card" onclick="openModal(5)">
-            <img src="img/bike5/img_1.png" alt="Image 5">
+        <div class="card" onclick="openModal(9)">
+            <img src="img/bike9/img_1.png" alt="Image 9">
             <div class="card-description">
-                <p>The bike is in excellent condition. Suitable for teenagers and adults. Excellent wheels, 
-                    and a number of gears that can quickly reach a speed of 40 km/h.</p>
+                <p>Don't know what to do in your free time? Ride your bike! and we will help you with your choice... 
+                    A wonderful bicycle with 9 gears, reaches speeds of up to 30 km/h on a flat road Buy it!</p>
             </div>
         </div>
-        <!-- Card 6 -->
         <div class="card" onclick="openModal(6)">
             <img src="img/bike6/img_1.png" alt="Image 6">
             <div class="card-description">
                 <p>Bicycle for city riding. 3*7 gears. Excellent condition. Bottle mount</p>
             </div>
         </div>
-        <!-- Card 7 -->
         <div class="card" onclick="openModal(7)">
             <img src="img/bike7/img_1.png" alt="Image 7">
             <div class="card-description">
                 <p>Electric bike. Electric motor not working. Bell. Rear brake does not work</p>
             </div>
         </div>
-        <!-- Card 8 -->
         <div class="card" onclick="openModal(8)">
             <img src="img/bike8/img_1.png" alt="Image 8">
             <div class="card-description">
@@ -258,17 +271,7 @@
                     gears, and wonderful condition!</p>
             </div>
         </div>
-        <!-- Card 9 -->
-        <div class="card" onclick="openModal(9)">
-            <img src="img/bike9/img_1.png" alt="Image 9">
-            <div class="card-description">
-                <p>Don't know what to do in your free time? Ride your bike! and we will help you with your choice... 
-                    A wonderful bicycle with 9 gears, reaches speeds of up to 30 km/h on a flat road Buy it!</p>
-            </div>
-        </div>
     </div>
-
-    <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -301,14 +304,13 @@
     </div>
 
     <script>
-        const PriceList = ["0.00", "750.00", "1000.00", "1500.00", "350.00", "80.00", 
+        const PriceList = ["0.00", "750.00", "1000.00", "1500.00", "350.00",  
         "200.00", "140.00", "80.00", "60.00"]
-        const NumberPhotos = [0, 4, 5, 1, 7, 4, 2, 5, 5, 5]
+        const NumberPhotos = [0, 4, 5, 1, 7, 2, 5, 5, 5]
         const DeteiledDescriptions = ["", "Excellent for every type of riding. 3 gears in front and 7 in rear wheel. Selling with the bag",
         "Electric bike. 7 rear gears, cruise assistance. Battery: 30V*10Ah. Without front light. Excellent condition",
         "Electric bike. 4 gears in front, 7 in back wheel. Battery 36V*10Ah. Wonderful condition",
         "FOX bicycle. Great and legendary bike with 3*10 gears. Hydraulic brakes, Shock absorber on the front wheel",
-        "Excellent bike for city riding. Brilliant condition, 3 front, 9 rear gears",
         "Excellent bike for city and off-road. 3*7 gears, excellent condition",
         "Electro, motor doesn't work. Battery 25V*10Ah",
         "Wonderful condition, 3 front, 7 rear gears, excellent for city trips",
@@ -348,6 +350,23 @@
             modalDescription.textContent = DeteiledDescriptions[currentCard];
             modalPrice.textContent = `Price: CHF ${PriceList[currentCard]}.00`;
         }
+        window.onload = changeLogo;
+        window.onresize = changeLogo;
+        function changeLogo(){
+            const logo_img = document.getElementById("logo");
+            const frb = document.getElementById("frb")
+            if (window.innerWidth <= 412){
+                frb.textContent = "Fribourg bicycles";
+                logo_img.src = "img/aaa/logo600_340.png";
+                logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
+            }
+            else{
+                frb.textContent = "Fribourg       bicycles";
+            logo_img.src = "img/aaa/logo700_700.png"; 
+            logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
+            }    
+        }
+
         window.onclick = function(event) {
             if (event.target == modal) {
                 closeModal();
