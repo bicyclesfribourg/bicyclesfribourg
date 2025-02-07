@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <title>Card Layout</title>
+    <link rel="preload" href="https://www.freeiconspng.com/uploads/list-icon-32.png" as="image">
+    <link rel="preload" href="img/aaa/logo600_340.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes"></script>
+</head>
+<body>
+    <div class="head">
+        <img id="openbtn" class="openbtn" onclick="openNav()" src="https://www.freeiconspng.com/uploads/list-icon-32.png"></img>
+        <img class="logo" src="img/aaa/logo700_700.png" id="logo" class="logo" alt="Logo"> 
+        <h1 id="frb">Fribourg bicycles</h1>
+        <h5>Excellent solutions for Your bikes and pastime</h5>
+    </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Details for bikes</a>
+        <a href="contacts.html">Contact</a>
+    </div>
+
+    <div class="contact_container">
+        <img class="contact__button" id="contact_button1" src="https://cdn-icons-png.flaticon.com/128/4423/4423697.png" alt="WhatsApp" onclick="open_link('https://wa.me/41765377924')">
+        <a id="contact_text" class="contact__button" href="tel:+41765377924" target = "-blanc">+41765377924</a>
+        <img class="contact__button" id="contact_button2" src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png" alt="Telegram" onclick="open_link('https://t.me/voujoinksx')">
+    </div>
+
+    <div class="map-container" style="width: 100%; height: 400px; margin-top: 20px;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.104065896178!2d7.150856315556453!3d46.80647797913886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e6d1f4b0f7b2b%3A0x6d7f8f8f8f8f8f8f!2sFribourg%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1618311234567!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+        ></iframe>
+    </div>
+
+    <div class="footer">
+        
+    </div>
+    <script>
+        function open_link(link){
+            window.open(link);
+        }
+
+    window.onload = changeLogo;
+    window.onresize = changeLogo;
+    function changeLogo(){
+        for (var i = 0; i<2; i++){
+                var button = document.getElementById("contact_button" + (i+1));
+                button.style.width = (window.innerWidth /20) + "px";
+                button.style.height = (window.innerWidth /20) + "px";
+                button.style.margin = (window.innerWidth/6) - 2*(window.innerWidth /30) + "px";
+
+            }
+
+        const number_phone = document.getElementById("contact_text");
+        const logo_img = document.getElementById("logo");
+        const frb = document.getElementById("frb")
+        const opm = document.getElementById("openbtn");
+        if (window.innerWidth <=630){ //mobile
+            frb.textContent = "Fribourg bicycles";
+            logo_img.src = "img/aaa/logo600_340.png";
+            opm.style.width = "23px";
+            opm.style.top = "30px";
+            opm.style.left = "30px";
+            logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
+            number_phone.style.fontSize = "x-large";
+        }
+        else{
+        opm.style.width = "75px";
+        opm.style.top = "10px";
+        opm.style.left = "45px";
+        frb.textContent = "Fribourg       bicycles";
+        logo_img.src = "img/aaa/logo700_700.png"; 
+        logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
+        }    
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+    }
+    </script>
+    </body>
+    </html>

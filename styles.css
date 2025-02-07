@@ -1,9 +1,9 @@
-/* я постарался сделать болеечитабельное все в стилях и скриптах
+/* я постарался сделать более читабельное все в стилях и скриптах
 
 УБЕДИТЕЛЬНАЯ ПРОСЬБА: я танцами с бубном добился того, что 
 бы все отображалось +- корректно, и не хочу менять расположение
 элементов. Цвета, шрифты, тени, тд. - с уддовольствием,
-но позиции, и ширины Пожалуйфста, оставь неизменяемыми
+но позиции, и ширины Пожалуйста, оставь неизменяемыми
 Уачки) */
 
 
@@ -66,6 +66,22 @@ body {
     width: 100%;
     margin-top: 80px; 
     margin-bottom: 60px;
+}
+.contact_container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    text-align: center;
+    margin: 0 auto; /* Center the container itself */
+    margin-top: 250px;
+    width: fit-content; /* Adjust the width to fit the content */
+    padding: 10px; /* Optional: Add some padding for spacing */
+}
+.contact__button {
+    margin: 0 10px; /* Add some space between the buttons */
+    width: 160px;
+    font-size: x-large;
+    height: auto;
 }
 .card {
     background-color: #fff;
