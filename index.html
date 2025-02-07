@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <title>Card Layout</title>
-    <link rel="preload" href="img/bike1/img_1.png" as="image">
-    <link rel="preload" href="img/bike1/img_2.png" as="image">
-    <link rel="preload" href="img/bike1/img_3.png" as="image">
-    <link rel="preload" href="img/bike1/img_4.png" as="image">
     <link rel="preload" href="img/bike2/img_1.png" as="image">
     <link rel="preload" href="img/bike2/img_2.png" as="image">
     <link rel="preload" href="img/bike2/img_3.png" as="image">
@@ -21,10 +17,6 @@
     <link rel="preload" href="img/bike4/img_5.png" as="image">
     <link rel="preload" href="img/bike4/img_6.png" as="image">
     <link rel="preload" href="img/bike4/img_7.png" as="image">
-    <link rel="preload" href="img/bike5/img_1.png" as="image">
-    <link rel="preload" href="img/bike5/img_2.png" as="image">
-    <link rel="preload" href="img/bike5/img_3.png" as="image">
-    <link rel="preload" href="img/bike5/img_4.png" as="image">
     <link rel="preload" href="img/bike6/img_1.png" as="image">
     <link rel="preload" href="img/bike6/img_2.png" as="image">
     <link rel="preload" href="img/bike7/img_1.png" as="image">
@@ -41,213 +33,14 @@
     <link rel="preload" href="img/bike9/img_3.png" as="image">
     <link rel="preload" href="img/bike9/img_4.png" as="image">
     <link rel="preload" href="img/bike9/img_5.png" as="image">
+    <link rel="preload" href="https://www.freeiconspng.com/uploads/list-icon-32.png" as="image">
     <link rel="preload" href="img/aaa/logo600_340.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
     <style>
-        html{
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
-        }   
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f9;
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-        .head {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-        .head .logo {
-            position: absolute;
-            top: 0px;
-            left: 100px;
-            width: 96px;
-            height: auto;
-            display: block;
-        }
-        .head h1, .head h5 {
-            white-space: pre;
-            position: relative;
-            z-index: 10;
-            margin-top: 15px;
-            margin-bottom: -3px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .container {
-            background-color: rgb(255, 244, 228);
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            width: 100%;
-            margin-top: 80px; 
-            margin-bottom: 60px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            border-style: solid;
-            border-width: 0.5px;
-            border-color: #000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center;
-            cursor: pointer;
-        }
-        .card img {
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 170px;
-        }
-        .card-description {
-            padding: 15px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000; 
-        }
-        .modal-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 562.5px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            overflow: auto;
-        }
-        .modal-content img {
-            max-width: 100%;
-            height: auto;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .logo{
-            z-index: 1;
-        }
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.8);
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-        }
-        .nav-button.left {
-            left: 10px;
-        }
-        .nav-button.right {
-            right: 10px;
-        }
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        .footer a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #000;
-            font-size: 24px;
-        }
-        .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            z-index: 1500;
-        }
-
-        .sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidebar .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-        .head .openbtn {
-            font-size: large;
-            position: absolute;
-            top: 10px;
-            left: 45px;
-            display: block;
-            z-index: 20;
-            width: 75px;
-            height: auto;
-        }
-
-        
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 500px){
-            .container {
-                grid-template-columns: 1fr; /* Single column layout */
-            }
-        }
     </style>
+
     <script src="https://cdn.jsdelivr.net/npm/lazysizes"></script>
 </head>
 <body>
@@ -269,25 +62,18 @@
         <div class="card" onclick="openModal(1)">
             <img src="img/bike1/img_1.png" alt="Image 1">
             <div class="card-description">
-                <p>Excellent bike for trips. Flat front wheel. Has 3 gears and 7 gears on the rear wheel. 
-                                                Beautiful car. Flat front wheel. Sold with a bag</p>
+                <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Excellent wheels, no troubles</p>
             </div>
         </div>
         <div class="card" onclick="openModal(2)">
             <img src="img/bike2/img_1.png" alt="Image 2">
             <div class="card-description">
-                <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Excellent wheels, no troubles</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(3)">
-            <img src="img/bike3/img_1.png" alt="Image 3">
-            <div class="card-description">
                 <p>Electric bike. 4 gears in front, 7 in the back.  Battery: 10Ah, 36V. Wonderful 
                                             condition, suitable for city and mountain riding</p>
             </div>
         </div>
-        <div class="card" onclick="openModal(4)">
-            <img src="img/bike4/img_1.png" alt="Image 4">
+        <div class="card" onclick="openModal(3)">
+            <img src="img/bike3/img_1.png" alt="Image 3">
             <div class="card-description">
                 <p>Don't know what to buy for your boyfriend/husband/friend/son? Shh, just a secret. 
                     Let's tell you that there is an excellent choice for a bicycle lover and for an 
@@ -296,27 +82,27 @@
                     pure pleasure while driving</p>
             </div>
         </div>
-        <div class="card" onclick="openModal(9)">
-            <img src="img/bike9/img_1.png" alt="Image 9">
+        <div class="card" onclick="openModal(4)">
+            <img src="img/bike4/img_1.png" alt="Image 4">
             <div class="card-description">
-                <p>Don't know what to do in your free time? Ride your bike! and we will help you with your choice... 
-                    A wonderful bicycle with 9 gears, reaches speeds of up to 30 km/h on a flat road Buy it!</p>
+                <p>Bicycle for city riding. 3*7 gears. Excellent condition + bottle mount</p>
+            </div>
+        </div>
+        <div class="card" onclick="openModal(5)">
+            <img src="img/bike5/img_1.png" alt="Image 5">
+            <div class="card-description">
+                <p>Electric bike. Electric motor not working. Bell. Rear brake does not work</p>
             </div>
         </div>
         <div class="card" onclick="openModal(6)">
             <img src="img/bike6/img_1.png" alt="Image 6">
             <div class="card-description">
-                <p>Bicycle for city riding. 3*7 gears. Excellent condition. Bottle mount</p>
+                <p>Don't know what to do in your free time? Ride your bike! and we will help you with your choice... 
+                    A wonderful bicycle with 3*7 gears, reaches speeds of up to 40 km/h on a flat road Buy it!</p>
             </div>
         </div>
         <div class="card" onclick="openModal(7)">
             <img src="img/bike7/img_1.png" alt="Image 7">
-            <div class="card-description">
-                <p>Electric bike. Electric motor not working. Bell. Rear brake does not work</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(8)">
-            <img src="img/bike8/img_1.png" alt="Image 8">
             <div class="card-description">
                 <p>A bicycle for traveling around the city and mountains. A wonderful choice if you 
                     want to ride with the breeze. There is a discount now, hurry up and grab it! 3:7 
@@ -332,7 +118,7 @@
             <h2 id="modal-title">Title</h2>
             <img id="modal-image" src="" alt="Modal Image" style="width: 100%; height: auto;">
             <p id="modal-description">Description</p>
-            <p id="modal-price">Price: $0.00</p>
+            <p id="modal-price">Price</p>
         </div>
     </div>
     <div class="map-container" style="width: 100%; height: 400px; margin-top: 20px;">
@@ -356,88 +142,7 @@
     </div>
 
     <script>
-        const PriceList = ["0.00", "750.00", "1000.00", "1500.00", "350.00",  
-        "200.00", "140.00", "80.00", "60.00"]
-        const NumberPhotos = [0, 4, 5, 1, 7, 2, 5, 5, 5]
-        const DeteiledDescriptions = ["", "Excellent for every type of riding. 3 gears in front and 7 in rear wheel. Selling with the bag",
-        "Electric bike. 7 rear gears, cruise assistance. Battery: 30V*10Ah. Without front light. Excellent condition",
-        "Electric bike. 4 gears in front, 7 in back wheel. Battery 36V*10Ah. Wonderful condition",
-        "FOX bicycle. Great and legendary bike with 3*10 gears. Hydraulic brakes, Shock absorber on the front wheel",
-        "Excellent bike for city and off-road. 3*7 gears, excellent condition",
-        "Electro, motor doesn't work. Battery 25V*10Ah",
-        "Wonderful condition, 3 front, 7 rear gears, excellent for city trips",
-        "Excellent conditioned bike, but without grips((( 1:9 gears"]
-        const modal = document.getElementById("modal");
-        const modalTitle = document.getElementById("modal-title");
-        const modalImage = document.getElementById("modal-image");
-        const modalDescription = document.getElementById("modal-description");
-        const modalPrice = document.getElementById("modal-price");
-        let currentCard = 1;
-        let currentImageIndex = 1;
-
-        function openModal(cardNumber) {
-            currentCard = cardNumber;
-            currentImageIndex = 1;
-            updateModalContent();
-            modal.style.display = "flex";
-        }
-
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex < 1) {
-                currentImageIndex = NumberPhotos[currentCard];
-            } else if (currentImageIndex > NumberPhotos[currentCard]) {
-                currentImageIndex = 1;
-            }
-            updateModalContent();
-        }
-
-        function updateModalContent() {
-            modalTitle.textContent = `Card ${currentCard} Title`;
-            modalImage.src = `./img/bike${currentCard}/img_${currentImageIndex}.png`;
-            modalDescription.textContent = DeteiledDescriptions[currentCard];
-            modalPrice.textContent = `Price: CHF ${PriceList[currentCard]}.00`;
-        }
-        window.onload = changeLogo;
-        window.onresize = changeLogo;
-        function changeLogo(){
-            const logo_img = document.getElementById("logo");
-            const frb = document.getElementById("frb")
-            const opm = document.getElementById("openbtn");
-            if (window.innerWidth <=600){ //mobile
-                frb.textContent = "Fribourg bicycles";
-                logo_img.src = "img/aaa/logo600_340.png";
-                opm.style.width = "23px";
-                opm.style.top = "30px";
-                opm.style.left = "30px";
-                logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
-            }
-            else{
-            opm.style.width = "75px";
-            opm.style.top = "10px";
-            opm.style.left = "45px";
-            frb.textContent = "Fribourg       bicycles";
-            logo_img.src = "img/aaa/logo700_700.png"; 
-            logo_img.style.left = ((window.innerWidth - logo_img.offsetWidth)/2) + "px";
-            }    
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-        }
     </script>
+
 </body>
 </html>
