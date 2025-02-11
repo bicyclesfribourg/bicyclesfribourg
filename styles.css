@@ -83,6 +83,22 @@ body {
     font-size: x-large;
     height: auto;
 }
+.about_info {
+    position: relative; /* Change from fixed to relative */
+    width: 100%;
+    height: auto; /* Adjust height to fit content */
+    margin-top: 100px; /* Adjust margin as needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.about_info h1, .about_info p {
+    margin-top: 20px; /* Adjust margin as needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -103,6 +119,12 @@ body {
 .card-description {
     padding: 15px;
 }
+.map-container{
+    width: 100%; 
+    height: 500px; 
+    bottom: 20px;
+}
+
 .modal {
     display: none;
     position: fixed;

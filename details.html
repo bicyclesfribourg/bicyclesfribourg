@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-    <title>FB Shop</title>
+    <title>FB Details</title>
     <link rel="preload" href="img/bike1/img_1.png" as="image">
     <link rel="preload" href="img/bike1/img_2.png" as="image">
     <link rel="preload" href="img/bike1/img_3.png" as="image">
@@ -57,53 +57,9 @@
 
     <div class="container">
         <div class="card" onclick="openModal(1)">
-            <img src="img/bike1/img_1.png" alt="Image 1">
+            <img src="imgd/detail1/img_1.png" alt="Image 1">
             <div class="card-description">
-                <p>Electric bike. 7 gears. Battery 30V*10Ah. No front light. Excellent wheels, no troubles</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(2)">
-            <img src="img/bike2/img_1.png" alt="Image 2">
-            <div class="card-description">
-                <p>Electric bike. 4 gears in front, 7 in the back.  Battery: 10Ah, 36V. Wonderful 
-                                            condition, suitable for city and mountain riding</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(3)">
-            <img src="img/bike3/img_1.png" alt="Image 3">
-            <div class="card-description">
-                <p>Don't know what to buy for your boyfriend/husband/friend/son? Shh, just a secret. 
-                    Let's tell you that there is an excellent choice for a bicycle lover and for an 
-                    ordinary person. The best choice for any type of riding. 3:10 gears, the 
-                    hydraulic brake system is more reliable, and the shock smoothing system delivers 
-                    pure pleasure while driving</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(4)">
-            <img src="img/bike4/img_1.png" alt="Image 4">
-            <div class="card-description">
-                <p>Bicycle for city riding. 3*7 gears. Excellent condition + bottle mount</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(5)">
-            <img src="img/bike5/img_1.png" alt="Image 5">
-            <div class="card-description">
-                <p>Electric bike. Electric motor not working. Bell. Rear brake does not work</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(6)">
-            <img src="img/bike6/img_1.png" alt="Image 6">
-            <div class="card-description">
-                <p>Don't know what to do in your free time? Ride your bike! and we will help you with your choice... 
-                    A wonderful bicycle with 3*7 gears, reaches speeds of up to 40 km/h on a flat road Buy it!</p>
-            </div>
-        </div>
-        <div class="card" onclick="openModal(7)">
-            <img src="img/bike7/img_1.png" alt="Image 7">
-            <div class="card-description">
-                <p>A bicycle for traveling around the city and mountains. A wonderful choice if you 
-                    want to ride with the breeze. There is a discount now, hurry up and grab it! 3:7 
-                    gears, and wonderful condition!</p>
+                <p>Detaill 1</p>
             </div>
         </div>
     </div>
@@ -148,16 +104,17 @@
 
 
 const PriceList = ["0.00", "1000.00", "1500.00", "350.00", "200.00",  
-    "80.00", "60.00", "140.00"]
-    const NumberPhotos = [0, 5, 1, 7, 2, 5, 5, 5]
+            "80.00", "60.00", "140.00"]
+
+const NumberPhotos = [0, 5, 1, 7, 2, 5, 5, 5]
     const DeteiledDescriptions = ["", 
-    "Electric bike. 7 rear gears, cruise assistance. Battery: 30V*10Ah. Without front light. Excellent condition",
-    "Electric bike. 4 gears in front, 7 in back wheel. Battery 36V*10Ah. Wonderful condition",
-    "FOX bicycle. Great and legendary bike with 3*10 gears. Hydraulic brakes, Shock absorber on the front wheel",
-    "Excelent choiсe in brilliant condition. Fast, efficient, and handome! Also with bottle holder",
-    "Electro, motor doesn't work. Battery 25V*10Ah",
-    "Excellent bike for city and off-road. 3*7 gears, excellent condition",
-    "Excellent conditioned bike, but without grips((( 1:9 gears"]
+    "description 1",
+    "description 2",
+    "description 3",
+    "description 4",
+    "description 5",
+    "description 6",
+    "description 7",]
     const modal = document.getElementById("modal");
     const modalTitle = document.getElementById("modal-title");
     const modalImage = document.getElementById("modal-image");
@@ -188,8 +145,8 @@ const PriceList = ["0.00", "1000.00", "1500.00", "350.00", "200.00",
     }
 
     function updateModalContent() {
-        modalTitle.textContent = `Bike ${currentCard}`;
-        modalImage.src = `./img/bike${currentCard}/img_${currentImageIndex}.png`;
+        modalTitle.textContent = `Detail ${currentCard}`;
+        modalImage.src = `./imgd/det${currentCard}/img_${currentImageIndex}.png`;
         modalDescription.textContent = DeteiledDescriptions[currentCard];
         modalPrice.textContent = `Price: CHF ${PriceList[currentCard]}`;
     }
